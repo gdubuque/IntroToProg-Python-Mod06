@@ -24,7 +24,7 @@ FILE_NAME: str = "Enrollments.json"
 
 # Define the global Variables (GD)
 students: list = []     # List of student data as dictionaries
-menu_choice: str        # Holds the choice made by the user.
+menu_choice: str = ''   # Holds the choice made by the user.
 
 
 # Processing --------------------------------------------------------------- #
@@ -105,9 +105,10 @@ class IO:
         :return: None
 
         ChangeLog: (Who, When, What)
-        G.DuBuque, 2024/08/05, Created function
+        G.DuBuque, 2024/08/05, Created function, added default of None to
+        message parameter to add robustness to function
         """
-        if message is None:  # In case user does not provide custom message
+        if message is None:  # In case of not providing a custom message
             print("There was an error!", "\n")
         else:
             print(message, "\n")
@@ -160,8 +161,8 @@ class IO:
         """
         print("-" * 50)
         for student in student_data:
-            print(f'Student {student["FirstName"]} '
-                  f'{student["LastName"]} is enrolled in {student["CourseName"]}')
+            print(f"Student {student["FirstName"]} "
+                  f"{student["LastName"]} is enrolled in {student["CourseName"]}")
         print("-" * 50)
 
     @staticmethod
