@@ -71,6 +71,7 @@ class FileProcessor:
 
         ChangeLog: (Who, When, What)
         G.DuBuque, 2024/08/05, Created function
+        G.DuBuque, 2024/08/06, Added for loop to print dictionaries in student_data
         """
         try:
             file = open(file_name, "w")
@@ -83,7 +84,10 @@ class FileProcessor:
         finally:
             if not file.closed:
                 file.close()
-            print("File saved successfully!")
+            print("The following data was saved to the file!")
+            # Changed print format to show data as is (dictionaries in json format) (GD)
+            for student in student_data:
+                print(student)
 
 
 # Presentation ------------------------------------------------------------- #
